@@ -60,3 +60,66 @@ git의 기초를 배워요
 
 
 
+## 리모트 연결하기
+
+`$ git remote add <name> <URL>`
+
+```
+# 리모트 삭제하기
+$ git remote remove <name>
+
+# 리모트 이름바꾸기
+$ git remote rename <old-name> <new-name>
+```
+
+
+
+## 리모트에 PUSH하기
+
+리모트에 업로드
+
+`$ git push <name> <branch>`
+
+
+
+## 리모트에서 최초 CLONE 받기
+
+리모트 리포 내용을 그대로 복제
+
+`$ git clone <URL>`
+
+
+
+## 리모트에서 PULL하기
+
+리모트에서 다운로드
+
+`$ git pull <name> <branch>`
+
+
+
+## 강의장 <=> 집 공부/프로젝트 시나리오
+
+> 앉을 때 PULL, 일어설 때 PUSH
+>
+> Sit PULL, Stand PUSH
+
+1. 집에서 기상
+2. 강의장 도착
+   1. `pull`
+3. 공부/TIL 정리
+   1. `commit`
+4. 강의 종료
+   1. `commit`
+   2. `push`
+5.  집 도착
+6. 복습
+   1. (처음이라면) `clone`
+   2. `pull`
+   3. `commit`
+7. 복습 끝
+   1. `commit`
+   2. `push`
+8. 잠
+9. 1번으로 이동
+
