@@ -264,7 +264,7 @@ Python
 ```python
 >>> a = 3
 >>> if a > 1 :
-  		print("a is bigger than 1")
+      print("a is bigger than 1")
 a is bigger than 1
 ```
 
@@ -274,7 +274,7 @@ a is bigger than 1
 
 ```python
 >>> for a in [1, 2, 3] :
-  		print(a)
+      print(a)
 1
 2
 3
@@ -287,8 +287,8 @@ a is bigger than 1
 ```python
 >>> i = 0
 >>> while i < 3 :
-  		i = i + 1
-    	print(i)
+      i = i + 1
+      print(i)
 1
 2
 3
@@ -300,7 +300,7 @@ a is bigger than 1
 
 ```python
 >>> def add(a, b) :
-  			return a + b
+      return a + b
 >>> add(3, 4)
 7
 ```
