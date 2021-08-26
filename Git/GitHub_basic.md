@@ -1,4 +1,4 @@
-# GitHub
+# GitHub_Basic
 
 ✏️📖 Git과 GitHub의 기초를 배워요
 
