@@ -201,15 +201,17 @@ http://git-scm.com/download/mac
 
 `$ git clone <url>`
 
-###### 예시
+###### 예시  
+
+libgit2라는 디렉토리를 만들고 그 안에 .git 디렉토리를 만들어서 저장소의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 `Checkout` 해놓음  
 
 `$ git clone https://github.com/libgit2/libgit2`
 
-libgit2라는 디렉토리를 만들고 그 안에 .git 디렉토리를 만들어서 저장소의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 `Checkout` 해놓음
+
+
+디렉토리 이름을 libgit2가 아닌 mylibgit으로 `Clone`함  
 
 `$ git clone https://github.com/libgit2/libgit2 mylibgit`
-
-디렉토리 이름을 libgit2가 아닌 mylibgit으로 `Clone`함
 
 
 
@@ -311,7 +313,13 @@ doc/ 디렉토리 아래의 모든 .pdf 파일을 무시
 
 - 현재 위치의 모든 파일을 stage하기
 
-`$ git add .`
+`$ git add .`  
+
+###### + ) git add 취소하기 (파일 상태를 Unstage로 변경하기)  
+
+`$ git reset HEAD <filename>`  
+
+만약 filename을 입력하지 않으면 add한 파일 전체를 취소한다.  
 
 
 
@@ -435,7 +443,7 @@ Git 저장소의 히스토리 조회하기
 
 #### 리모트 저장소에 Push하기
 
-`$ git push  <remote> <branch>`
+`$ git push <remote> <branch>`
 
 - 단, Clone한 사람이 여러 명 있을 때 다른 사람이 Push한 후에는 바로 Push할 수 없으며, 먼저 다른 사람이 작업한 것을 가져와서 Merge한 후에 Push할 수 있음
 
