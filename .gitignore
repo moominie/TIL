@@ -305,6 +305,7 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 ### etc ###
-
+img/
+materials/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,java,python,xcode,swift
