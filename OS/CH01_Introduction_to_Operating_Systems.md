@@ -218,7 +218,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 운영 체제의 구조
 
-![OSstructure](https://user-images.githubusercontent.com/86271759/154468742-38bcf4e7-ae92-4c4b-b79f-384755e7c78a.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154469225-509ef7fe-6427-41e6-bcc5-5cde3638eb1c.jpg" alt="OSstructure" style="zoom:50%;" />
 
 ###### CPU(CPU 스케줄링)
 
