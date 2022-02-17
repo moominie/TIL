@@ -48,7 +48,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 - 컴퓨터 하드웨어 바로 위에 설치되어 사용자 및 다른 모든 소프트웨어와 하드웨어를 연결하는 소프트웨어 계층  
 
-<img src="CH01_Introduction_to_Operating_Systems.assets/OS.jpg" alt="OS" style="zoom:50%;" />
+![OS](https://user-images.githubusercontent.com/86271759/154468593-01660305-3101-4c55-b656-d28c5940b826.jpg)
 
 - **협의의 운영체제 = 커널** 
 
@@ -218,7 +218,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 운영 체제의 구조
 
-<img src="CH01_Introduction_to_Operating_Systems.assets/OSstructure.jpg" style="zoom:50%;" />
+![OSstructure](https://user-images.githubusercontent.com/86271759/154468742-38bcf4e7-ae92-4c4b-b79f-384755e7c78a.jpg)
 
 ###### CPU(CPU 스케줄링)
 
