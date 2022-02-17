@@ -28,13 +28,29 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 
 
-#### 운영체제란 무엇인가
+##### <강의 목표>
+
+운영체제는 컴퓨터 하드웨어 바로 위에 설치되는 소프트웨어 계층으로서 모든 컴퓨터 시스템의 필수적인 부분이다.  
+
+본 강좌에서는 이와 같은 운영체제의 개념과 역할, 운영체제를 구성하는 각 요소 및 그 알고리즘의 핵심적인 부분에 대해 기초부터 학습한다.  
+
+
+
+
+
+
+
+### 1-2. Introduction to Operating Systems
+
+#### 운영체제란 무엇인가?
 
 ###### 운영체제(Operating System, OS)
 
 - 컴퓨터 하드웨어 바로 위에 설치되어 사용자 및 다른 모든 소프트웨어와 하드웨어를 연결하는 소프트웨어 계층  
 
-- **협의의 운영체제(커널)** 
+<img src="CH01_Introduction_to_Operating_Systems.assets/OS.jpg" alt="OS" style="zoom:50%;" />
+
+- **협의의 운영체제 = 커널** 
 
   : 운영체제의 핵심 부분으로 메모리에 상주하는 부분  
 
@@ -52,7 +68,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
    - 하드웨어를 직접 다루는 복잡한 부분을 운영체제가 대행
 
-2. **컴퓨터 시스템의 자원을 효율적으로 관리(핵심)**
+2. **컴퓨터 시스템의 자원을 효율적으로 관리 (★핵심!)**
 
    - **운영체제 = 자원 관리자**
    - 프로세서(CPU), 기억장치(Memory), 입출력 장치(I/O) 등 자원(resource)의 효율적 관리
@@ -63,17 +79,13 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
    - 사용자 및 운영체제 자신의 보호
    - 프로세스, 파일, 메시지 등을 관리
    
-   *효율성, 형평성*
+   *효율성, 형평성을 모두 고려해야 함*
 
 
-
-
-
-
-
-### 1-2. Introduction to Operating Systems
 
 #### 운영 체제의 분류
+
+- 운영 체제의 분류 기준
 
 1. 동시 작업 가능 여부
 2. 사용자의 수
@@ -87,15 +99,13 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
   - 한 번에 하나의 작업만 처리
 
-  (예) MS-DOS
-
-  
+  (예) MS-DOS 프롬프트 상에서는 한 명령의 수행을 끝내기 전에 다른 명령을 수행시킬 수 없음  
 
 - **다중 작업(multi tasking) - 현대 운영체제 방식**
 
   - 동시에 두 개 이상의 작업 처리
 
-  (예) UNIX, MS Windows 등 
+  (예) UNIX, MS Windows 등에서는 한 명령의 수행이 끝나기 전에 다른 명령이나 프로그램을 수행할 수 있음  
 
 
 
@@ -103,9 +113,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 - 단일 사용자(single user)
 
-​		(예) MS-DOS, MS Windows
-
-
+​		(예) MS-DOS, MS Windows  
 
 - **다중 사용자(multi user) : 여러 사용자의 계정을 만들어서 동시 접근을 할 수 있음**
 
@@ -122,8 +130,6 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
   (예) 초기 Punch Card 처리 시스템  
 
-  
-
 - **시분할(time sharing) - 현대 운영체제 방식**
 
   - 여러 작업을 수행할 때 컴퓨터 처리 능력을 일정한 시간 단위로 분할하여 사용
@@ -134,18 +140,19 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
   - 각각의 사용자 입장에서는 interactive한 방식의 response를 받을 수 있음  
 
-   
-
 - 실시간(realtime OS)
 
   - 정해진 시간(데드라인) 안에 반드시 결과가 나옴이 보장되어야 하는 실시간 시스템을 위한 OS
 
-    (예) 원자로/공장 제어, 미사일 제어, 반도체 장비, 로보트 제어 등 정확한 시간을 맞춰서 처리되어야 하는 정밀한 시스템
+    (예) 원자로/공장 제어, 미사일 제어, 반도체 장비, 로보트 제어 등 정확한 시간을 맞춰서 처리되어야 하는 정교한 시스템  
 
   - 실시간 시스템의 개념 확장
 
     - Hard realtime system (경성 실시간 시스템)
-    - Soft realtime system (연성 실시간 시스템)
+    
+    - Soft realtime system (연성 실시간 시스템) : 데드라인이 있지만 지키지 못한다고 해서 치명적인 결과를 초래하지는 않는 시스템  
+    
+      (예) 영화 멀티미디어 프레임(초당 24프레임)  
 
 
 
@@ -155,9 +162,11 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 ###### Multitasking
 
+: 실행 중인 프로그램들에게 짧은 시간씩 CPU를 번갈아 할당, 겉으로 보기에는 컴퓨터에서 여러 작업이 동시에 수행되는 것처럼 보임  
+
 ###### Multiprogramming
 
-: 여러 프로그램이 메모리에 올라가 있음을 강조  
+: 여러 프로그램이 메모리에 동시에 올라가 있음을 강조  
 
 ###### Time sharing
 
@@ -165,7 +174,9 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 ###### Multiprocess
 
-: Multiprocessor는 하나의 컴퓨터에 CPU(processor)가 여러 개 붙어 있음을 의미
+: 위의 4가지 용어 모두 비슷한 의미  
+
+- Multiprocessor는 하나의 컴퓨터에 CPU(processor)가 여러 개 붙어 있음을 의미
 
 
 
@@ -175,7 +186,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
   - 처음에는 대형 컴퓨터용(서버)으로 만들어짐
   - 코드의 대부분을 **C언어**로 작성
   - 높은 이식성(Portability) : 한 컴퓨터에서 만든 코드를 다른 컴퓨터에서 사용하기 용이함
-  - 최소한의 커널 구조
+  - 최소한의 커널 구조 : 대부분의 기능들은 밖으로 빼고 핵심 기능들만 커널에 집어넣은 구조로 메모리를 적게 차지함  
   - 복잡한 시스템에 맞게 확장 용이
   - **소스 코드 공개**
   - 프로그램 개발에 용이
@@ -183,14 +194,10 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
     - System V, FreeBSD, SunOS, Solaris
     - **Linux**
 
-
-
 - DOS(Disk Operating System)
   - 처음에는 개인용 컴퓨터를 위해 만들어짐
   - MS사에서 1981년 IBM-PC를 위해 개발
   - 단일 사용자용 운영체제, 메모리 관리 능력의 한계(주 기억 장치 : 640KB)
-
-
 
 - MS Windows
   - MS사의 다중 작업용 GUI 기반 운영 체제
@@ -199,13 +206,9 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
   - 불안정성
   - 풍부한 자원 소프트웨어
 
-
-
 - Handheld device를 위한 OS
 
   - PalmOS, Pocket PC (WinCE), Tiny OS  
-
-  
 
 - Smart device를 위한 OS
 
@@ -215,24 +218,21 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 운영 체제의 구조
 
-|         CPU          |
-| :------------------: |
-|      **memory**      |
-| **Disk, I/O device** |
+<img src="CH01_Introduction_to_Operating_Systems.assets/OSstructure.jpg" style="zoom:50%;" />
 
-###### CPU 스케줄링
+###### CPU(CPU 스케줄링)
 
 : 누구한테 CPU를 줄까?  
 
 
 
-###### 메모리 관리 
+###### memory(메모리 관리)
 
 : 한정된 메모리를 어떻게 쪼개어 쓸까?  
 
 
 
-###### 파일 관리
+###### Disk(파일 관리)
 
 디스크에 파일을 어떻게 보관할까?  
 
@@ -240,9 +240,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 ###### I/O device(입출력 관리)
 
-각기 다른 입출력장치와 컴퓨터 간에 어떻게 정보를 주고 받게 할까?  
-
-기본적으로 interrupt
+각기 다른 입출력장치와 컴퓨터 간에 어떻게 정보를 주고 받게 할까?   
 
 
 
@@ -265,7 +263,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 운영체제 과목의 수강 태도
 
-OS 개발자 관점에서 수강하기
+OS 사용자 관점이 아니라 OS 개발자 관점에서 수강하기  
 
 - 대부분의 알고리즘은 OS 프로그램 자체의 내용
 - 인간의 신체가 뇌의 통제를 받듯 컴퓨터 하드웨어는 운영체제의 통제를 받으며 그 운영체제는 사람이 프로그래밍하는 것
