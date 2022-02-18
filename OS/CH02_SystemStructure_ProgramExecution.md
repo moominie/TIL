@@ -16,13 +16,17 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 컴퓨터 시스템 구조
 
-| Computer (host) | I/O device                        |
-| --------------- | --------------------------------- |
-| CPU             | Disk                              |
-| Memory          | input device : 키보드, 마우스 등  |
-|                 | output device : 모니터, 프린터 등 |
+![ComputerSystemStructure](https://user-images.githubusercontent.com/86271759/154608907-77061fe5-5368-4a31-8836-3802986ed21f.jpg)
 
-*CPU는 매순간 Program counter가 가리키고 있는 메모리의 주소에 저장되어 있는 instruction을 읽어와서 실행하는데, 한 instruction 실행 후 다음 instruction 실행 전에 interrupt line에서 interrupt가 들어왔는지를 체크한다. interrupt 시 CPU의 제어권이 운영체제로 넘어간다.*
+| Computer (host) | I/O device                                  |
+| --------------- | ------------------------------------------- |
+| CPU             | Disk(input, output device의 역할 모두 수행) |
+| Memory          | input device : 키보드, 마우스 등            |
+|                 | output device : 모니터, 프린터 등           |
+
+memory : CPU의 작업 공간
+
+CPU : memory 접근을 해서 instruction을 실행함
 
 
 
@@ -44,7 +48,7 @@ Mode bit을 통해 하드웨어적으로 두 가지 모드의 operation 지원
 
 #### Interrupt(인터럽트)
 
-현대의 운영체제는 인터럽트에 의해 구동됨  
+**현대의 운영체제는 인터럽트에 의해 구동됨**  
 
 - 인터럽트
   - 인터럽트 당한 시점의 레지스터와 program counter를 save한 후 CPU의 제어를 인터럽트 처리 루틴에 넘긴다.
@@ -64,7 +68,7 @@ Mode bit을 통해 하드웨어적으로 두 가지 모드의 operation 지원
 #### Timer
 
 - 타이머
-  - 정해진 시간이 흐른 뒤 운영체제에게 제어권이 넘어가도록 interrupt를 발생시킴
+  - 정해진 시간이 흐른 뒤 사용자 프로그램으로부터 운영체제로 제어권이 넘어가도록 interrupt를 발생시킴
   - 타이머는 매 클럭 틱 때마다 1씩 감소
   - 타이머 값이 0이 되면 타이머 interrupt 발생
   - **CPU를 특정 프로그램이 독점하는 것으로부터 보호**
@@ -78,7 +82,7 @@ Mode bit을 통해 하드웨어적으로 두 가지 모드의 operation 지원
 - I/O device controller
   - **해당 I/O 장치 유형을 관리하는 일종의 작은 CPU**
   - 제어 정보를 위해 control register, status register를 가짐
-  - local buffer를 가짐(일종의 data register)
+  - local buffer를 가짐(일종의 data register로 데이터를 담음)
 - I/O는 실제 device와 local buffer 사이에서 일어남
 - Device controller는 I/O가 끝났을 경우 interrupt로 CPU에 그 사실을 알림
 
@@ -92,11 +96,30 @@ OS 코드 중 각 장치별 처리 루틴 -> software
 
 
 
+#### DMA Controller(Direct Memory Access)  
+
+CPU 뿐만 아니라 직접 Memory에 접근할 수 있는 컨트롤러  
+
+CPU를 더 효율적으로 쓰기 위한 장치  
+
+- I/O device가 중간 중간 작업을 끝낼 때마다 interrupt를 걸면 CPU에 overhead 문제가 발생할 수 있으므로 DMA Controller가 I/O device의 local buffer에 접근해 완료된 작업을 Memory에 복사하는 일까지 해줌  
+- 모든 작업 후에 DMA Controller는 CPU에 interrupt를 한 번만 걸어서 보고하면 됨  
+
+
+
+#### Memory Controller
+
+CPU와 DMA Controller가 특정 메모리 영역에 동시 접근하면 문제가 발생할 수 있음  
+
+Memory Controller가 그걸 중재하는 역할을 담당
+
+
+
 #### 입출력(I/O)의 수행
 
 - 모든 입출력 명령은 특권 명령
 - 사용자 프로그램은 어떻게 I/O를 하는가?
-  - **System call**
+  - **System call(시스템콜)**
     - **사용자 프로그램은 운영체제에게 I/O 요청**
   - trap을 사용하여 인터럽트 벡터의 특정 위치로 이동
   - 제어권이 인터럽트 벡터가 가리키는 인터럽트 서비스 루틴으로 이동
@@ -118,6 +141,8 @@ OS 코드 중 각 장치별 처리 루틴 -> software
 ### 2-2. System Structure & Program Execution2
 
 #### 동기식 입출력과 비동기식 입출력
+
+![synchronous_asynchronous_IO](https://user-images.githubusercontent.com/86271759/154608985-38f432a5-033b-4c2c-a0fa-9960dba995e3.jpg)
 
 - 동기식 입출력(Synchronous I/O)
   - I/O 요청 후 입출력 작업이 완료된 후에야 제어가 사용자 프로그램에 넘어감
@@ -157,36 +182,35 @@ OS 코드 중 각 장치별 처리 루틴 -> software
 
 #### 저장장치 계층 구조
 
-| Primary (Executable) | CPU               |
-| -------------------- | ----------------- |
-|                      | Registers         |
-|                      | Cache Memory      |
-|                      | Main Memory(DRAM) |
-| **Secondary**        | Magnetic Disk     |
-|                      | Optical Disk      |
-|                      | Magnetic Tape     |
+![StorageSystem](https://user-images.githubusercontent.com/86271759/154609057-516830d2-2ca5-403d-946c-e9481cacfa1b.jpg)
 
-*Caching : copying information into faster strorage system*
+*Executable : CPU가 직접 접근 가능* 
 
-*Executable : CPU가 직접 접근 가능*
+위로 올라갈수록
 
-- Speed
-- Cost
-- Volatility
+- Speed(빠름)
+- Cost(비쌈)
+- Volatility(휘발성)
 
 
 
 #### 프로그램의 실행(메모리 load)
 
+![MemoryLoad](https://user-images.githubusercontent.com/86271759/154609094-464cebd4-b54e-4965-b8d0-1f5ef203a851.jpg)
+
 ###### File System
 
 각 프로그램은 File System에 실행파일로 저장되어 있음   
+
+비휘발성(전원이 나가도 내용이 유지됨)  
 
 
 
 ###### Virtual memory
 
-각 프로그램(프로세스)의 stack, data, code로 구성된 독자적인 주소 공간(Address space)이 일시적으로 생김 
+각 프로그램(프로세스)마다 stack, data, code로 구성된 독자적인 주소 공간(Address space)이 만들어짐   
+
+프로그램 실행시 만들어졌다가 종료하면 사라짐  
 
 
 
@@ -198,7 +222,7 @@ OS 코드 중 각 장치별 처리 루틴 -> software
 
 ###### Swap area
 
-디스크에도 올라옴
+메모리 용량 한계 때문에 Physical memory의 연장 공간으로서 사용
 
 
 
@@ -212,9 +236,11 @@ OS 코드 중 각 장치별 처리 루틴 -> software
 - data
   - 운영체제가 사용하는 여러 자료 구조들이 저장됨
   - 하드웨어(CPU, Memory, disk) 종류별 자료구조
-  - PCB(Process Control block) : 프로세스(프로그램) 별 PCB가 하나씩 만들어짐 
+  - PCB(Process Control block) : 각 프로세스(프로그램)마다 그것을 관리하기 위한  PCB가 하나씩 만들어짐 
 - stack
+  - 함수를 사용하거나 리턴할 때 스택 영역을 사용함  
   - 사용자 프로세스마다 커널 스택을 따로 둠
+  
 
 
 
@@ -234,19 +260,9 @@ OS 코드 중 각 장치별 처리 루틴 -> software
 
 #### 프로그램의 실행
 
+![programExecution](https://user-images.githubusercontent.com/86271759/154609291-1ef7b944-8c25-457e-a232-6ccd8b15f7bb.jpg)
+
 프로그램은 user mode와 kernel mode를 반복
-
-1. Program begins : A의 주소공간, user mode  
-
-(예) User defined function call
-
-2. System call : Kernel의 주소공간, kernel mode
-3. Return from kernel : A의 주소공간, user mode  
-
-(예) Library function call
-
-4. System call : Kernel의 주소공간, kernel mode  
-5. Progrm ends
 
 
 
