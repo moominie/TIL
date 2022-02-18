@@ -14,7 +14,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 ##### Index
 
-[1. 운영체제 개요](CH01_Introduction_to_Operating_Systems.md)
+1. 운영체제 개요
 2. 컴퓨터시스템의 구조
 3. 프로세스 관리
 4. CPU 스케줄링
