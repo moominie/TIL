@@ -16,7 +16,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 컴퓨터 시스템 구조
 
-<img src="https://user-images.githubusercontent.com/86271759/154608907-77061fe5-5368-4a31-8836-3802986ed21f.jpg" width="250" height="250"/>
+<img src="https://user-images.githubusercontent.com/86271759/154608907-77061fe5-5368-4a31-8836-3802986ed21f.jpg" width="400" height="300"/>
 
 | Computer (host) | I/O device                                  |
 | --------------- | ------------------------------------------- |
@@ -142,7 +142,7 @@ Memory Controller가 그걸 중재하는 역할을 담당
 
 #### 동기식 입출력과 비동기식 입출력
 
-![synchronous_asynchronous_IO](https://user-images.githubusercontent.com/86271759/154608985-38f432a5-033b-4c2c-a0fa-9960dba995e3.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154608985-38f432a5-033b-4c2c-a0fa-9960dba995e3.jpg" width="400" height="300"/>
 
 - 동기식 입출력(Synchronous I/O)
   - I/O 요청 후 입출력 작업이 완료된 후에야 제어가 사용자 프로그램에 넘어감
@@ -182,7 +182,7 @@ Memory Controller가 그걸 중재하는 역할을 담당
 
 #### 저장장치 계층 구조
 
-![StorageSystem](https://user-images.githubusercontent.com/86271759/154609057-516830d2-2ca5-403d-946c-e9481cacfa1b.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154609057-516830d2-2ca5-403d-946c-e9481cacfa1b.jpg" width="400" height="300"/>
 
 *Executable : CPU가 직접 접근 가능* 
 
@@ -260,7 +260,7 @@ Memory Controller가 그걸 중재하는 역할을 담당
 
 #### 프로그램의 실행
 
-![programExecution](https://user-images.githubusercontent.com/86271759/154609291-1ef7b944-8c25-457e-a232-6ccd8b15f7bb.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154609291-1ef7b944-8c25-457e-a232-6ccd8b15f7bb.jpg" width="400" height="300"/>
 
 프로그램은 user mode와 kernel mode를 반복
 
