@@ -16,7 +16,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 컴퓨터 시스템 구조
 
-![ComputerSystemStructure](https://user-images.githubusercontent.com/86271759/154608907-77061fe5-5368-4a31-8836-3802986ed21f.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154608907-77061fe5-5368-4a31-8836-3802986ed21f.jpg" width="250" height="250"/>
 
 | Computer (host) | I/O device                                  |
 | --------------- | ------------------------------------------- |
