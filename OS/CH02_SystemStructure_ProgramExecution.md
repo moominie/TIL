@@ -196,7 +196,7 @@ Memory Controller가 그걸 중재하는 역할을 담당
 
 #### 프로그램의 실행(메모리 load)
 
-![MemoryLoad](https://user-images.githubusercontent.com/86271759/154609094-464cebd4-b54e-4965-b8d0-1f5ef203a851.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154609094-464cebd4-b54e-4965-b8d0-1f5ef203a851.jpg" width="400" height="300"/>
 
 ###### File System
 
