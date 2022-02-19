@@ -447,7 +447,19 @@ Git 저장소의 히스토리 조회하기
 
 - 단, Clone한 사람이 여러 명 있을 때 다른 사람이 Push한 후에는 바로 Push할 수 없으며, 먼저 다른 사람이 작업한 것을 가져와서 Merge한 후에 Push할 수 있음
 
+###### +) git push에 실패한 경우
 
+- 오류 메세지 : "리모트에 로컬에 없는 사항이 들어 있으므로 업데이트가 거부되었습니다. ..."
+
+- 해결 방법 : push하기 전에 먼저 pull 명령어로 remote branch의 데이터를 가져와서 local branch와 merge 시키기
+
+  `$ git pull <remote> <branch>`
+
+  + branch가 여러 개일 경우 git pull 명령어 입력 전에 다음의 명령어를 먼저 입력한다. 
+
+  `$ git config pull.rebase false`  
+
+  
 
 #### 리모트 저장소 살펴보기
 
