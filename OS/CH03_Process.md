@@ -52,11 +52,11 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 - Terminated
   - 수행(execution)이 끝난 상태
 
-![](CH03_Process.assets/process_state1.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794142-4dabc61d-c37a-4678-bdb4-4327c10f482e.jpg" width="450" height="350">
 
-![process_state2](CH03_Process.assets/process_state2.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794148-eacfe048-b672-4b8e-b813-6ab68b24df38.jpg" width="450" height="350">
 
-![process_state3](CH03_Process.assets/process_state3.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794149-be66f67a-113a-4cbd-96e7-36ae4e78f6f9.jpg" width="450" height="350">
 
 
 
@@ -76,7 +76,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 4. 파일 관련
    - Open file descriptors... 
 
-![](CH03_Process.assets/PCB.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794204-7022a50c-95a6-4df5-b891-21f56820e690.jpg" width="300" height="350">
 
 
 
@@ -90,9 +90,9 @@ CPU가 다른 프로세스에게 넘어갈 때 운영체제는 다음을 수행
 
 - CPU를 새롭게 얻는 프로세스의 상태를 PCB에서 읽음
 
-![](CH03_Process.assets/Context_Switch1.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794247-9744b04e-0dd6-4975-8396-13fbfe74725b.jpg" width="450" height="350">
 
-![Context_Switch2](CH03_Process.assets/Context_Switch2.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794249-7977a8cf-decc-4875-954c-e2301aa93c84.jpg" width="450" height="350">
 
 그림 (1)과 (2)의 경우를 잘 비교!
 
@@ -150,7 +150,7 @@ CPU가 다른 프로세스에게 넘어갈 때 운영체제는 다음을 수행
 
 *Suspended : 외부에서 resume해주어야 Active*
 
-![](CH03_Process.assets/Process_State4.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794297-e4c12032-5b8a-4ebc-a27c-487a6624a23f.jpg" width="450" height="350">
 
 
 
@@ -186,7 +186,7 @@ CPU가 다른 프로세스에게 넘어갈 때 운영체제는 다음을 수행
 
 프로세스 내부에 CPU 수행 단위가 여러 개 있는 경우 그 CPU 수행 단위를 thread라고 부름  
 
-![thread](CH03_Process.assets/thread.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154794319-54762c1a-cb8e-41b8-9514-b4bbdf8caec1.jpg" width="450" height="350">
 
 - Thread의 구성
   - program counter
