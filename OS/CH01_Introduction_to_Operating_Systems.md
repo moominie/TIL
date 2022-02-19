@@ -12,7 +12,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 ### 1-1. 강의 소개
 
-##### <강의 내용>
+##### Index
 
 1. 운영체제 개요
 2. 컴퓨터시스템의 구조
@@ -48,7 +48,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 - 컴퓨터 하드웨어 바로 위에 설치되어 사용자 및 다른 모든 소프트웨어와 하드웨어를 연결하는 소프트웨어 계층  
 
-![OS](https://user-images.githubusercontent.com/86271759/154468593-01660305-3101-4c55-b656-d28c5940b826.jpg)
+<img src="https://user-images.githubusercontent.com/86271759/154468593-01660305-3101-4c55-b656-d28c5940b826.jpg" width="400" height="300"/>
 
 - **협의의 운영체제 = 커널** 
 
@@ -218,7 +218,7 @@ http://www.kocw.net/home/search/kemView.do?kemId=1046323
 
 #### 운영 체제의 구조
 
-<img src="https://user-images.githubusercontent.com/86271759/154469225-509ef7fe-6427-41e6-bcc5-5cde3638eb1c.jpg" alt="OSstructure" style="zoom:50%;" />
+<img src="https://user-images.githubusercontent.com/86271759/154469225-509ef7fe-6427-41e6-bcc5-5cde3638eb1c.jpg" alt="OSstructure" width="400" height="300"/>
 
 ###### CPU(CPU 스케줄링)
 
